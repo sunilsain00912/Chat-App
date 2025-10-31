@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* Global Layout */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;    /* ✅ only vertical scrolling */
+  overflow-x: hidden;  /* 🚫 no sideways scrolling */
+  overscroll-behavior: none; /* ✅ disables pull-to-refresh or bounce */
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Optional custom scrollbar for inner scroll areas */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+
+/* WhatsApp-style smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(150, 150, 150, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+*:hover {
+  scrollbar-color: rgba(150, 150, 150, 0.5) transparent;
+}
