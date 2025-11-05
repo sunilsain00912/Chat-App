@@ -9,7 +9,7 @@ const typingUsers = new Map();
 const allowedOrigins = [
   "http://localhost:5173",
   "http://127.0.0.1:5173",
-  "https://whatsapp-clone-roan-six.vercel.app",
+  "https://chat-app-three-snowy-72.vercel.app",
 ];
 
 const initializeSocket = (server) => {
@@ -85,7 +85,7 @@ const initializeSocket = (server) => {
     });
 
     // 🔹 SEND MESSAGE
-    
+
     socket.on("send_message", async (message) => {
       try {
         if (!message?.receiver?._id) return;
@@ -102,9 +102,8 @@ const initializeSocket = (server) => {
       }
     });
 
-    
     //  🔹 MESSAGE READ RECEIPTS
-     
+
     socket.on("message_read", async ({ messageIds, conversationId }) => {
       try {
         if (!Array.isArray(messageIds) || messageIds.length === 0) return;
